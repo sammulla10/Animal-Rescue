@@ -1,0 +1,329 @@
+{
+    "petlist":[
+        {
+            "id": 1,
+            "name": "Abyssinian Cats",
+            "location": "Vashi",
+            "categ": "CAT",
+            "img":"assets/img/cats/cat_1.jpg",
+            "contact":"9132687435",
+            "new":true
+        },
+        {
+            "id": 2,
+            "name": "Scottish Fold",
+            "location": "Bhiwandi",
+            "categ": "CAT",
+            "img":"assets/img/cats/cat_2.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 3,
+            "name": "Ragdoll",
+            "location": "Turbhe",
+            "categ": "CAT",
+            "img":"assets/img/cats/cat_3.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 4,
+            "name": "Burmes",
+            "location": "Panvel",
+            "categ": "CAT",
+            "img":"assets/img/cats/cat_4.jpg",
+            "contact":"9132687435",
+            "new":true
+        },
+        {
+            "id": 5,
+            "name": "American Shorthair",
+            "location": "Karnala",
+            "categ": "CAT",
+            "img":"assets/img/cats/cat_5.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 6,
+            "name": "British Shorthair",
+            "location": "Vashi",
+            "categ": "CAT",
+            "img":"assets/img/cats/cat_6.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 7,
+            "name": "Abyssinian Cats",
+            "location": "Panvel",
+            "categ": "CAT",
+            "img":"assets/img/cats/cat_7.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 8,
+            "name": "Scottish Fold",
+            "location": "Karnala",
+            "categ": "CAT",
+            "img":"assets/img/cats/cat_8.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 9,
+            "name": "Ragdoll",
+            "location": "Vashi",
+            "categ": "CAT",
+            "img":"assets/img/cats/cat_9.jpg",
+            "contact":"9132687435",
+            "new":true
+        },
+        {
+            "id": 10,
+            "name": "Roborowski",
+            "location": "Turbhe",
+            "categ": "HAMSTER",
+            "img":"assets/img/cats/hamster_1.jpg",
+            "contact":"9132687435",
+            "new":true
+        },
+        {
+            "id": 11,
+            "name": "Ruso",
+            "location": "Bhiwandi",
+            "categ": "HAMSTER",
+            "img":"assets/img/cats/hamster_2.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 12,
+            "name": "Golden",
+            "location": "Kharghar",
+            "categ": "HAMSTER",
+            "img":"assets/img/cats/hamster_3.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 13,
+            "name": "Chinese",
+            "location": "Kurla",
+            "categ": "HAMSTER",
+            "img":"assets/img/cats/hamster_4.jpg",
+            "contact":"9132687435",
+            "new":true
+        },
+        {
+            "id": 14,
+            "name": "Dwarf Campbell",
+            "location": "Bandra",
+            "categ": "HAMSTER",
+            "img":"assets/img/cats/hamster_5.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 15,
+            "name": "Syrian",
+            "location": "Andheri",
+            "categ": "HAMSTER",
+            "img":"assets/img/cats/hamster_6.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 16,
+            "name": "Dwarf Winter",
+            "location": "Turbhe",
+            "categ": "HAMSTER",
+            "img":"assets/img/cats/hamster_7.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 17,
+            "name": "American Rabbit",
+            "location": "Panvel",
+            "categ": "BUNNY",
+            "img":"assets/img/cats/bunny_1.jpg",
+            "contact":"9132687435",
+            "new":true
+        },
+        {
+            "id": 18,
+            "name": "Belgian Hare Rabbit",
+            "location": "Turbhe",
+            "categ": "BUNNY",
+            "img":"assets/img/cats/bunny_2.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 19,
+            "name": "Blanc de Hotot",
+            "location": "Bhiwandi",
+            "categ": "BUNNY",
+            "img":"assets/img/cats/bunny_3.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 20,
+            "name": "Californian Rabbits",
+            "location": "Kurla",
+            "categ": "BUNNY",
+            "img":"assets/img/cats/bunny_4.jpg",
+            "contact":"9132687435",
+            "new":true
+        },
+        {
+            "id":21,
+            "name": "Checkered Giant Rabbit",
+            "location": "Bhiwandi",
+            "categ": "BUNNY",
+            "img":"assets/img/cats/bunny_5.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 22,
+            "name": "Dutch Rabbit",
+            "location": "Turbhe",
+            "categ": "BUNNY",
+            "img":"assets/img/cats/bunny_6.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 23,
+            "name": "English Lop",
+            "location": "Panvel",
+            "categ": "BUNNY",
+            "img":"assets/img/cats/bunny_7.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 24,
+            "name": "English Spot",
+            "location": "Panvel",
+            "categ": "BUNNY",
+            "img":"assets/img/cats/bunny_8.jpg",
+            "contact":"9132687435",
+            "new":true
+        },
+        {
+            "id": 25,
+            "name": "Affenpinscher",
+            "location": "Kharghar",
+            "categ": "DOG",
+            "img":"assets/img/cats/dog_1.jpg",
+            "contact":"9132687435",
+            "new":true
+        },
+        {
+            "id": 26,
+            "name": "Akita Shepherd",
+            "location": "Andheri",
+            "categ": "DOG",
+            "img":"assets/img/cats/dog_2.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 27,
+            "name": "American Foxhound",
+            "location": "Bandra",
+            "categ": "DOG",
+            "img":"assets/img/cats/dog_3.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 28,
+            "name": "Shepherd Dog",
+            "location": "Kurla",
+            "categ": "DOG",
+            "img":"assets/img/cats/dog_4.jpg",
+            "contact":"9132687435",
+            "new":true
+        },
+        {
+            "id": 29,
+            "name": "Australian Terrier",
+            "location": "Kharghar",
+            "categ": "DOG",
+            "img":"assets/img/cats/dog_5.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 30,
+            "name": "Bearded Collie",
+            "location": "Turbhe",
+            "categ": "DOG",
+            "img":"assets/img/cats/dog_6.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 31,
+            "name": "Belgian Sheepdog",
+            "location": "Bandra",
+            "categ": "DOG",
+            "img":"assets/img/cats/dog_7.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 32,
+            "name": "Bloodhound",
+            "location": "Panvel",
+            "categ": "DOG",
+            "img":"assets/img/cats/dog_8.jpg",
+            "contact":"9132687435",
+            "new":true
+        },
+        {
+            "id": 33,
+            "name": "Boston Terrier",
+            "location": "Bhiwandi",
+            "categ": "DOG",
+            "img":"assets/img/cats/dog_9.jpg",
+            "contact":"9132687435",
+            "new":true
+        },
+        {
+            "id": 34,
+            "name": "Chinese Shar-Pei",
+            "location": "Bhiwandi",
+            "categ": "DOG",
+            "img":"assets/img/cats/dog_10.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 35,
+            "name": "Border Collie",
+            "location": "Panvel",
+            "categ": "DOG",
+            "img":"assets/img/cats/dog_11.jpg",
+            "contact":"9132687435",
+            "new":false
+        },
+        {
+            "id": 36,
+            "name": "Chow Chow",
+            "location": "Bandra",
+            "categ": "DOG",
+            "img":"assets/img/cats/dog_12.jpg",
+            "contact":"9132687435",
+            "new":true
+        }
+
+    ]
+}
