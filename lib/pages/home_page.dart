@@ -19,10 +19,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.orange[100],
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
+          toolbarHeight: 70,
+          backgroundColor: Colors.orange[400],
+          elevation: 2,
           actions: [
             Padding(
               padding: EdgeInsets.only(right: 16),
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> {
                   Navigator.pushNamed(context, MyRoutes.newPost);
                 },
                 child: Icon(
-                  Icons.add_box_outlined,
+                  Icons.library_add_rounded,
                   color: Colors.grey[800],
                 ),
               ),
@@ -43,6 +44,9 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 20,
+              ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
@@ -114,7 +118,6 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.grey[800],
                       ),
                     ),
-                  
                   ],
                 ),
               ),
@@ -157,7 +160,7 @@ class _HomePageState extends State<HomePage> {
           margin: EdgeInsets.all(8),
           decoration: BoxDecoration(
             border: Border.all(
-              color: Colors.grey,
+              color: Colors.black,
               width: 1,
             ),
             borderRadius: BorderRadius.all(
