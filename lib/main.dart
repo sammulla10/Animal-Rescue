@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: MyTheme.lightTheme(context),
-      // initialRoute: MyRoutes.homeRoute,
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         "/": (context) => StartPage(),
         "/home": (context) => HomePage(),

@@ -22,10 +22,13 @@ class _SignupPageState extends State<SignupPage> {
               SizedBox(
                 height: 30,
               ),
-              // Image.asset(
-              //   "assets/img/signup_img.png",
-              //   fit: BoxFit.cover,
-              // ),
+              Image.asset(
+                "assets/img/start_page.jpg",
+                fit: BoxFit.cover,
+              ),
+              SizedBox(
+                height: 40,
+              ),
               Title(
                 color: Colors.deepPurple,
                 child: Text(
@@ -124,12 +127,16 @@ class _SignupPageState extends State<SignupPage> {
                       return signpassword;
                     },
                   ),
+                  SizedBox(
+                    height: 40,
+                  ),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.pushNamed(context, MyRoutes.loginRoute);
                     },
-                    style:
-                        ElevatedButton.styleFrom(primary: Colors.orange[300]),
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.orange[300],
+                        minimumSize: Size(300, 50)),
                     child: Text(
                       "Sign up",
                       textAlign: TextAlign.center,
