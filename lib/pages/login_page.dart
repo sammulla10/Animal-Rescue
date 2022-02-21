@@ -51,10 +51,17 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       TextFormField(
                         decoration: InputDecoration(
-                          icon: Icon(CupertinoIcons.person),
+                          focusedBorder: InputBorder.none,
+                          icon: Icon(
+                            CupertinoIcons.person,
+                            color: Colors.orange[700],
+                          ),
                           hintText: "Enter Username",
                           labelText: "Username",
+                          hintStyle: TextStyle(color: Colors.orange[500]),
+                          labelStyle: TextStyle(color: Colors.orange[500]),
                         ),
+                        cursorColor: Colors.orange[700],
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Username cannot be empty';
@@ -65,10 +72,16 @@ class _LoginPageState extends State<LoginPage> {
                       TextFormField(
                         obscureText: true,
                         decoration: InputDecoration(
-                          icon: Icon(CupertinoIcons.star),
+                          icon: Icon(
+                            CupertinoIcons.star,
+                            color: Colors.orange[700],
+                          ),
                           hintText: "Enter Password",
                           labelText: "Password",
+                          hintStyle: TextStyle(color: Colors.orange[500]),
+                          labelStyle: TextStyle(color: Colors.orange[500]),
                         ),
+                        cursorColor: Colors.orange[700],
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Password cannot be empty';
@@ -85,10 +98,12 @@ class _LoginPageState extends State<LoginPage> {
                           "Log In",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.black),
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
                         ),
                         style: ElevatedButton.styleFrom(
-                            minimumSize: Size(300, 50),
+                            minimumSize: Size(350, 50),
                             primary: Colors.orange[300]),
                       )
                     ],

@@ -30,7 +30,7 @@ class _SignupPageState extends State<SignupPage> {
                 height: 40,
               ),
               Title(
-                color: Colors.deepPurple,
+                color: Colors.orange,
                 child: Text(
                   "Sign Up",
                   style: TextStyle(
@@ -134,15 +134,17 @@ class _SignupPageState extends State<SignupPage> {
                     onPressed: () {
                       Navigator.pushNamed(context, MyRoutes.loginRoute);
                     },
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.orange[300],
-                        minimumSize: Size(300, 50)),
                     child: Text(
-                      "Sign up",
+                      "Sign Up",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.black),
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
                     ),
+                    style: ElevatedButton.styleFrom(
+                        minimumSize: Size(350, 50),
+                        primary: Colors.orange[300]),
                   ),
                 ]),
               ),
