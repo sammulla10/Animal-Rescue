@@ -38,90 +38,131 @@ class _NewPostState extends State<NewPost> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey[100],
-        body: Container(
-          padding: EdgeInsets.all(30),
-          child: Column(
-            children: [
-              TextFormField(
-                decoration: InputDecoration(
-                  icon: Icon(CupertinoIcons.paw),
-                  hintText: 'Enter Name or Breed',
-                  labelText: 'Name or Breed',
-                ),
-                validator: (value1) {
-                  if (value1 == null || value1.isEmpty) {
-                    return 'Please enter Name or Breed of Pet. This required field';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                  icon: Icon(CupertinoIcons.location),
-                  hintText: 'Enter Location',
-                  labelText: 'Location',
-                ),
-                validator: (value2) {
-                  if (value2 == null || value2.isEmpty) {
-                    return 'Please enter your Location. This required field';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                  icon: Icon(CupertinoIcons.t_bubble),
-                  hintText: 'Enter Category e.g.BUNNY,DOG,CAT',
-                  labelText: 'Category',
-                ),
-                validator: (value3) {
-                  if (value3 == null || value3.isEmpty) {
-                    return 'Please enter Name or Breed of Pet. This required field';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                  icon: Icon(CupertinoIcons.phone),
-                  hintText: 'Enter your contact number',
-                  labelText: 'Contact',
-                ),
-                validator: (value4) {
-                  if (value4 == null || value4.isEmpty) {
-                    return 'Please enter Name or Breed of Pet. This required field';
-                  }
-                  return null;
-                },
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  var addimage = pickImage();
-                },
-                child: Text('Select an Image'),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 20),
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //       builder: (context) => CategoryList(category: value3)),
-                    // );
-                    Navigator.pushNamed(context, MyRoutes.homeRoute);
+        appBar: AppBar(
+          toolbarHeight: 70,
+          backgroundColor: Colors.orange[400],
+          elevation: 2,
+          title: Text(
+            'New Post',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        body: SingleChildScrollView(
+          physics: NeverScrollableScrollPhysics(),
+          child: Container(
+            padding: EdgeInsets.all(30),
+            child: Column(
+              children: [
+                TextFormField(
+                  decoration: InputDecoration(
+                    icon: Icon(
+                      CupertinoIcons.tag,
+                      color: Colors.orange[700],
+                    ),
+                    hintText: 'Enter Name or Breed',
+                    labelText: 'Name or Breed',
+                    labelStyle: TextStyle(color: Colors.orange[500]),
+                  ),
+                  validator: (value1) {
+                    if (value1 == null || value1.isEmpty) {
+                      return 'Please enter Name or Breed of Pet. This required field';
+                    }
+                    return null;
                   },
-                  child: Text('Done'),
                 ),
-              ),
-            ],
+                TextFormField(
+                  decoration: InputDecoration(
+                    icon: Icon(
+                      CupertinoIcons.location,
+                      color: Colors.orange[700],
+                    ),
+                    hintText: 'Enter Location',
+                    labelText: 'Location',
+                    labelStyle: TextStyle(color: Colors.orange[500]),
+                  ),
+                  validator: (value2) {
+                    if (value2 == null || value2.isEmpty) {
+                      return 'Please enter your Location. This required field';
+                    }
+                    return null;
+                  },
+                ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    icon: Icon(
+                      CupertinoIcons.t_bubble,
+                      color: Colors.orange[700],
+                    ),
+                    hintText: 'Enter Category e.g.BUNNY,DOG,CAT',
+                    labelText: 'Category',
+                    labelStyle: TextStyle(color: Colors.orange[500]),
+                  ),
+                  validator: (value3) {
+                    if (value3 == null || value3.isEmpty) {
+                      return 'Please enter Name or Breed of Pet. This required field';
+                    }
+                    return null;
+                  },
+                ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    icon: Icon(
+                      CupertinoIcons.phone,
+                      color: Colors.orange[700],
+                    ),
+                    hintText: 'Enter your contact number',
+                    labelText: 'Contact',
+                    labelStyle: TextStyle(color: Colors.orange[500]),
+                  ),
+                  validator: (value4) {
+                    if (value4 == null || value4.isEmpty) {
+                      return 'Please enter Name or Breed of Pet. This required field';
+                    }
+                    return null;
+                  },
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    var addimage = pickImage();
+                  },
+                  child: Text('Select an Image'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.orange[300],
+                    fixedSize: Size(350, 50),
+                    elevation: 5,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 20),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //       builder: (context) => CategoryList(category: value3)),
+                      // );
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
+                    },
+                    child: Text('Done'),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.orange[300],
+                      fixedSize: Size(350, 50),
+                      elevation: 5,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -26,7 +26,9 @@ class _LoginPageState extends State<LoginPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 30),
+              SizedBox(
+                height: 30,
+              ),
               Image.asset(
                 "assets/img/start_page.jpg",
                 fit: BoxFit.cover,
@@ -38,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
                 "Login Page",
                 style: TextStyle(
                   fontSize: 25,
-                  color: Colors.orange[300],
+                  color: Colors.orange[400],
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -58,7 +60,6 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           hintText: "Enter Username",
                           labelText: "Username",
-                          hintStyle: TextStyle(color: Colors.orange[500]),
                           labelStyle: TextStyle(color: Colors.orange[500]),
                         ),
                         cursorColor: Colors.orange[700],
@@ -78,7 +79,6 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           hintText: "Enter Password",
                           labelText: "Password",
-                          hintStyle: TextStyle(color: Colors.orange[500]),
                           labelStyle: TextStyle(color: Colors.orange[500]),
                         ),
                         cursorColor: Colors.orange[700],
@@ -103,8 +103,9 @@ class _LoginPageState extends State<LoginPage> {
                               color: Colors.black),
                         ),
                         style: ElevatedButton.styleFrom(
-                            minimumSize: Size(350, 50),
-                            primary: Colors.orange[300]),
+                            fixedSize: Size(350, 50),
+                            primary: Colors.orange[300],
+                            elevation: 5),
                       )
                     ],
                   ),

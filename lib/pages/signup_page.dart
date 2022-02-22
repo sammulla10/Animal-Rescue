@@ -29,15 +29,12 @@ class _SignupPageState extends State<SignupPage> {
               SizedBox(
                 height: 40,
               ),
-              Title(
-                color: Colors.orange,
-                child: Text(
-                  "Sign Up",
-                  style: TextStyle(
-                    color: Colors.orange[500],
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                  ),
+              Text(
+                "Sign Up",
+                style: TextStyle(
+                  color: Colors.orange[400],
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
                 ),
               ),
               Padding(
@@ -52,7 +49,6 @@ class _SignupPageState extends State<SignupPage> {
                         color: Colors.orange[700],
                       ),
                       hintText: 'Enter Username',
-                      hintStyle: TextStyle(color: Colors.orange[500]),
                       labelText: 'Username',
                       labelStyle: TextStyle(color: Colors.orange[500]),
                     ),
@@ -72,7 +68,6 @@ class _SignupPageState extends State<SignupPage> {
                         color: Colors.orange[700],
                       ),
                       hintText: 'Enter Email',
-                      hintStyle: TextStyle(color: Colors.orange[500]),
                       labelText: 'Email',
                       labelStyle: TextStyle(color: Colors.orange[500]),
                     ),
@@ -92,7 +87,6 @@ class _SignupPageState extends State<SignupPage> {
                         color: Colors.orange[700],
                       ),
                       hintText: 'Enter Contact',
-                      hintStyle: TextStyle(color: Colors.orange[500]),
                       labelText: 'Contact',
                       labelStyle: TextStyle(color: Colors.orange[500]),
                     ),
@@ -112,7 +106,6 @@ class _SignupPageState extends State<SignupPage> {
                         color: Colors.orange[700],
                       ),
                       hintText: "Enter Password",
-                      hintStyle: TextStyle(color: Colors.orange[500]),
                       labelText: "Password",
                       labelStyle: TextStyle(color: Colors.orange[500]),
                     ),
@@ -131,9 +124,8 @@ class _SignupPageState extends State<SignupPage> {
                     height: 40,
                   ),
                   ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, MyRoutes.loginRoute);
-                    },
+                    onPressed: () =>
+                        Navigator.pushNamed(context, MyRoutes.loginRoute),
                     child: Text(
                       "Sign Up",
                       textAlign: TextAlign.center,
@@ -143,8 +135,9 @@ class _SignupPageState extends State<SignupPage> {
                           color: Colors.black),
                     ),
                     style: ElevatedButton.styleFrom(
-                        minimumSize: Size(350, 50),
-                        primary: Colors.orange[300]),
+                        fixedSize: Size(350, 50),
+                        primary: Colors.orange[300],
+                        elevation: 5),
                   ),
                 ]),
               ),

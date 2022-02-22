@@ -21,6 +21,14 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         backgroundColor: Colors.orange[100],
         appBar: AppBar(
+          title: Text(
+            'Home',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           toolbarHeight: 70,
           backgroundColor: Colors.orange[400],
           elevation: 2,
