@@ -1,11 +1,13 @@
+import 'package:animal_rescue/pages/product_page.dart';
 import 'package:animal_rescue/utils/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:animal_rescue/models/category_list.dart';
+import 'package:animal_rescue/pages/category_list.dart';
 import 'package:animal_rescue/models/pet_model.dart';
-import 'package:animal_rescue/models/pet_widget.dart';
+import 'package:animal_rescue/pages/pet_widget.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/cupertino.dart';
 import 'new_post.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,6 +23,7 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         backgroundColor: Colors.orange[100],
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Text(
             'Home',
             textAlign: TextAlign.center,
@@ -34,15 +37,32 @@ class _HomePageState extends State<HomePage> {
           elevation: 2,
           actions: [
             Padding(
-              padding: EdgeInsets.only(right: 16),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, MyRoutes.newPost);
-                },
-                child: Icon(
-                  Icons.library_add_rounded,
-                  color: Colors.grey[800],
-                ),
+              padding: EdgeInsets.all(16),
+              child: Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.newPost);
+                    },
+                    child: Icon(
+                      Icons.library_add_rounded,
+                      color: Colors.grey[800],
+                    ),
+                  ),
+                  SizedBox(width: 16),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.loginRoute);
+                    },
+                    child: Text(
+                      "Log out",
+                      style: TextStyle(
+                        color: Colors.grey[800],
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
@@ -113,6 +133,19 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+              //   children: [
+              //     GestureDetector(
+              //         onTap: () {},
+              //         child: Column(
+              //           children: [
+              //             Icon(Icons.abc_rounded),
+              //             Text('Medicine'),
+              //           ],
+              //         )),
+              //   ],
+              // ),
               Padding(
                 padding: EdgeInsets.all(16),
                 child: Row(
@@ -160,6 +193,12 @@ class _HomePageState extends State<HomePage> {
             context,
             MaterialPageRoute(
                 builder: (context) => CategoryList(category: category)),
+          );
+        },
+        onDoubleTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ProductPage()),
           );
         },
         child: Container(
@@ -232,6 +271,8 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+  Category newMethod(Category category) => category;
 
   List<Widget> buildNewestPet() {
     List<Widget> list = [];

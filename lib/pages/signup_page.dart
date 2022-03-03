@@ -124,8 +124,8 @@ class _SignupPageState extends State<SignupPage> {
                     height: 40,
                   ),
                   ElevatedButton(
-                    onPressed: () =>
-                        Navigator.pushNamed(context, MyRoutes.loginRoute),
+                    onPressed: () => Navigator.pushReplacementNamed(
+                        context, MyRoutes.loginRoute),
                     child: Text(
                       "Sign Up",
                       textAlign: TextAlign.center,

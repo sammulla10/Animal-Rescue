@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:animal_rescue/models/category_list.dart';
+import 'package:animal_rescue/pages/category_list.dart';
 import 'package:animal_rescue/models/pet_model.dart';
-import 'package:animal_rescue/models/pet_widget.dart';
+import 'package:animal_rescue/pages/pet_widget.dart';
 import 'package:animal_rescue/utils/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

@@ -1,4 +1,5 @@
 import 'package:animal_rescue/pages/new_post.dart';
+import 'package:animal_rescue/pages/product_page.dart';
 import 'package:animal_rescue/utils/routes.dart';
 import 'package:animal_rescue/widgets/themes.dart';
 import "package:flutter/material.dart";

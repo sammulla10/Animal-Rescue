@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:animal_rescue/utils/routes.dart';
+import 'dart:ui';
 
 class StartPage extends StatelessWidget {
   @override
