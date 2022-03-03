@@ -16,7 +16,8 @@ class _LoginPageState extends State<LoginPage> {
     await Future.delayed(
       Duration(seconds: 1),
     );
-    await Navigator.pushNamed(context, MyRoutes.homeRoute);
+    await Navigator.of(context).pushNamedAndRemoveUntil(
+        MyRoutes.homeRoute, (Route<dynamic> route) => false);
   }
 
   @override

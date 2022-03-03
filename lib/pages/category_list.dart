@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animal_rescue/models/pet_model.dart';
-import 'package:animal_rescue/models/pet_widget.dart';
+import 'package:animal_rescue/pages/pet_widget.dart';
 
 class CategoryList extends StatelessWidget {
   final Category category;
@@ -13,8 +13,9 @@ class CategoryList extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         brightness: Brightness.light,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
+        toolbarHeight: 70,
+        backgroundColor: Colors.orange[400],
+        elevation: 2,
         centerTitle: true,
         title: Text(
           (category == Category.HAMSTER
@@ -46,9 +47,7 @@ class CategoryList extends StatelessWidget {
             padding: EdgeInsets.only(right: 16, left: 16, top: 16, bottom: 32),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                
-              ],
+              children: [],
             ),
           ),
           Expanded(
@@ -74,6 +73,4 @@ class CategoryList extends StatelessWidget {
       ),
     );
   }
-
- 
 }
