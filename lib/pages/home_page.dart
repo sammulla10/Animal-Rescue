@@ -1,3 +1,4 @@
+import 'package:animal_rescue/pages/donate_page.dart';
 import 'package:animal_rescue/pages/product_page.dart';
 import 'package:animal_rescue/utils/routes.dart';
 import 'package:flutter/material.dart';
@@ -170,8 +171,37 @@ class _HomePageState extends State<HomePage> {
                   children: buildNewestPet(),
                 ),
               ),
+
+              SizedBox(
+                height: 16,
+              ),
+
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => DonateScreen()),
+                    );
+                  },
+                  child: Text(
+                    'Donate',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    elevation: 10,
+                    minimumSize: Size(350, 50),
+                    maximumSize: Size(500, 50),
+                  ),
+                ),
+              ),
+
               Container(
-                height: 130,
+                height: 50,
                 margin: EdgeInsets.only(bottom: 16),
                 child: PageView(
                   physics: BouncingScrollPhysics(),
@@ -271,8 +301,6 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  Category newMethod(Category category) => category;
 
   List<Widget> buildNewestPet() {
     List<Widget> list = [];
