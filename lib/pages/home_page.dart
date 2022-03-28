@@ -17,6 +17,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Pet> pets = getPetList();
+  int currentindex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -76,27 +77,27 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: Text(
-                  "Find Your",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                child: Text(
-                  "Lovely pet in anywhere",
-                  style: TextStyle(
-                    color: Colors.grey[800],
-                    fontSize: 24,
-                  ),
-                ),
-              ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(horizontal: 16),
+              //   child: Text(
+              //     "Find Your",
+              //     style: TextStyle(
+              //       color: Colors.black,
+              //       fontWeight: FontWeight.bold,
+              //       fontSize: 24,
+              //     ),
+              //   ),
+              // ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              //   child: Text(
+              //     "Lovely pet in anywhere",
+              //     style: TextStyle(
+              //       color: Colors.grey[800],
+              //       fontSize: 24,
+              //     ),
+              //   ),
+              // ),
               Padding(
                 padding: EdgeInsets.all(16),
                 child: Row(
@@ -200,22 +201,45 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
 
-              Container(
-                height: 50,
-                margin: EdgeInsets.only(bottom: 16),
-                child: PageView(
-                  physics: BouncingScrollPhysics(),
-                  children: [],
-                ),
-              ),
+              // Container(
+              //   height: 100,
+              //   margin: EdgeInsets.only(bottom: 16),
+              //   child: PageView(
+              //     physics: BouncingScrollPhysics(),
+              //     children: [],
+              //   ),
+              // ),
             ],
           ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          // selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.black,
+          type: BottomNavigationBarType.shifting,
+          currentIndex: currentindex,
+          onTap: (index) => setState(() => currentindex = index),
+          items: [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.pets_outlined),
+                label: 'Pets',
+                backgroundColor: Colors.orange[400]),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_cart),
+                label: 'Shop',
+                backgroundColor: Colors.blue[900]),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.library_add_rounded),
+              label: 'Add Post',
+              backgroundColor: Colors.blueGrey[800],
+            ),
+          ],
         ),
       ),
     );
   }
 
   Widget buildPetCategory(Category category, Color color) {
+    var deviceSize = MediaQuery.of(context).size;
     return Expanded(
       child: GestureDetector(
         onTap: () {
@@ -232,6 +256,7 @@ class _HomePageState extends State<HomePage> {
           );
         },
         child: Container(
+          // height: deviceSize.height * 0.08,
           height: 80,
           padding: EdgeInsets.all(12),
           margin: EdgeInsets.all(8),
@@ -247,8 +272,8 @@ class _HomePageState extends State<HomePage> {
           child: Row(
             children: [
               Container(
-                height: 56,
-                width: 56,
+                height: 46,
+                width: 46,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: color.withOpacity(0.5),
