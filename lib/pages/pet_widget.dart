@@ -10,6 +10,7 @@ class PetWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var deviceSize = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -105,6 +106,44 @@ class PetWidget extends StatelessWidget {
           ],
         ),
       ),
+
+      // -------------------------------------NEW WIDGET-------------------------------
+      // child: Column(
+      //   mainAxisAlignment: MainAxisAlignment.start,
+      //   // mainAxisSize: MainAxisSize.min,
+      //   // crossAxisAlignment: CrossAxisAlignment.stretch,
+      //   children: [
+      //     Flexible(
+      //       fit: FlexFit.loose,
+      //       child: Container(
+      //         decoration: BoxDecoration(
+      //           image: DecorationImage(
+      //             image: AssetImage(pet.imageUrl),
+      //             fit: BoxFit.cover,
+      //           ),
+      //         ),
+      //         // margin: EdgeInsets.only(
+      //         //   right: 16,
+      //         //   left: 16,
+      //         //   bottom: 16,
+      //         // ),
+      //         width: deviceSize.width * 0.92,
+      //         // height: deviceSize.height * 0.6,
+      //       ),
+      //     ),
+      //     Padding(
+      //       padding: EdgeInsets.fromLTRB(16, 16, 8, 16),
+      //       child: Text(
+      //         pet.name,
+      //         style: TextStyle(
+      //           color: Colors.grey[800],
+      //           fontSize: 18,
+      //           fontWeight: FontWeight.bold,
+      //         ),
+      //       ),
+      //     ),
+      //   ],
+      // ),
     );
   }
 }
