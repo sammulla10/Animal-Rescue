@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animal_rescue/models/pet_model.dart';
-import 'package:animal_rescue/pages/pet_widget.dart';
+import 'package:animal_rescue/widgets/pet_widget.dart';
 
 class CategoryList extends StatelessWidget {
   final Category category;

@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:animal_rescue/pages/category_list.dart';
 import 'package:animal_rescue/models/pet_model.dart';
-import 'package:animal_rescue/pages/pet_widget.dart';
+import 'package:animal_rescue/widgets/pet_widget.dart';
 import 'package:animal_rescue/utils/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -38,9 +38,10 @@ class _NewPostState extends State<NewPost> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.blueGrey[100],
         appBar: AppBar(
           toolbarHeight: 70,
-          backgroundColor: Colors.orange[400],
+          backgroundColor: Colors.blueGrey[400],
           elevation: 2,
           title: Text(
             'New Post',
@@ -61,12 +62,13 @@ class _NewPostState extends State<NewPost> {
                   decoration: InputDecoration(
                     icon: Icon(
                       CupertinoIcons.tag,
-                      color: Colors.orange[700],
+                      color: Colors.blueGrey[700],
                     ),
                     hintText: 'Enter Name or Breed',
                     labelText: 'Name or Breed',
-                    labelStyle: TextStyle(color: Colors.orange[500]),
+                    labelStyle: TextStyle(color: Colors.blueGrey[500]),
                   ),
+                  cursorColor: Colors.blueGrey[900],
                   validator: (value1) {
                     if (value1 == null || value1.isEmpty) {
                       return 'Please enter Name or Breed of Pet. This required field';
@@ -75,14 +77,15 @@ class _NewPostState extends State<NewPost> {
                   },
                 ),
                 TextFormField(
+                  cursorColor: Colors.blueGrey[900],
                   decoration: InputDecoration(
                     icon: Icon(
                       CupertinoIcons.location,
-                      color: Colors.orange[700],
+                      color: Colors.blueGrey[700],
                     ),
                     hintText: 'Enter Location',
                     labelText: 'Location',
-                    labelStyle: TextStyle(color: Colors.orange[500]),
+                    labelStyle: TextStyle(color: Colors.blueGrey[500]),
                   ),
                   validator: (value2) {
                     if (value2 == null || value2.isEmpty) {
@@ -92,14 +95,15 @@ class _NewPostState extends State<NewPost> {
                   },
                 ),
                 TextFormField(
+                  cursorColor: Colors.blueGrey[900],
                   decoration: InputDecoration(
                     icon: Icon(
                       CupertinoIcons.t_bubble,
-                      color: Colors.orange[700],
+                      color: Colors.blueGrey[700],
                     ),
                     hintText: 'Enter Category e.g.BUNNY,DOG,CAT',
                     labelText: 'Category',
-                    labelStyle: TextStyle(color: Colors.orange[500]),
+                    labelStyle: TextStyle(color: Colors.blueGrey[500]),
                   ),
                   validator: (value3) {
                     if (value3 == null || value3.isEmpty) {
@@ -109,14 +113,15 @@ class _NewPostState extends State<NewPost> {
                   },
                 ),
                 TextFormField(
+                  cursorColor: Colors.blueGrey[900],
                   decoration: InputDecoration(
                     icon: Icon(
                       CupertinoIcons.phone,
-                      color: Colors.orange[700],
+                      color: Colors.blueGrey[700],
                     ),
                     hintText: 'Enter your contact number',
                     labelText: 'Contact',
-                    labelStyle: TextStyle(color: Colors.orange[500]),
+                    labelStyle: TextStyle(color: Colors.blueGrey[500]),
                   ),
                   validator: (value4) {
                     if (value4 == null || value4.isEmpty) {
@@ -134,7 +139,7 @@ class _NewPostState extends State<NewPost> {
                   },
                   child: Text('Select an Image'),
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.orange[300],
+                    primary: Colors.blueGrey[300],
                     fixedSize: Size(350, 50),
                     elevation: 5,
                   ),
@@ -155,7 +160,7 @@ class _NewPostState extends State<NewPost> {
                     },
                     child: Text('Done'),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.orange[300],
+                      primary: Colors.blueGrey[300],
                       fixedSize: Size(350, 50),
                       elevation: 5,
                     ),
