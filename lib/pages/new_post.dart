@@ -41,7 +41,7 @@ class _NewPostState extends State<NewPost> {
         backgroundColor: Colors.blueGrey[100],
         appBar: AppBar(
           toolbarHeight: 70,
-          backgroundColor: Colors.blueGrey[400],
+          backgroundColor: Colors.blueGrey[500],
           elevation: 2,
           title: Text(
             'New Post',
@@ -137,9 +137,15 @@ class _NewPostState extends State<NewPost> {
                   onPressed: () {
                     var addimage = pickImage();
                   },
-                  child: Text('Select an Image'),
+                  child: Text(
+                    'Select an Image',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.blueGrey[300],
+                    primary: Colors.blueGrey[600],
                     fixedSize: Size(350, 50),
                     elevation: 5,
                   ),
@@ -158,9 +164,15 @@ class _NewPostState extends State<NewPost> {
                       // );
                       Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
-                    child: Text('Done'),
+                    child: Text(
+                      'Done',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.blueGrey[300],
+                      primary: Colors.blueGrey[600],
                       fixedSize: Size(350, 50),
                       elevation: 5,
                     ),

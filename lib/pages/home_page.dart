@@ -234,7 +234,7 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.shopping_cart),
                 label: 'Products',
-                backgroundColor: Colors.blue[700]),
+                backgroundColor: Colors.blue[800]),
             BottomNavigationBarItem(
               icon: Icon(Icons.library_add_rounded),
               label: 'Add Post',

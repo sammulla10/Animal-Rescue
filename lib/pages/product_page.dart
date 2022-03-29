@@ -22,7 +22,7 @@ class ProductPage extends StatelessWidget {
           ),
         ),
         toolbarHeight: 70,
-        backgroundColor: Colors.blue[700],
+        backgroundColor: Colors.blue[600],
         elevation: 2,
       ),
     );
