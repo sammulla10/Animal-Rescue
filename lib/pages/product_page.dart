@@ -10,10 +10,11 @@ class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[100],
       appBar: AppBar(
         // automaticallyImplyLeading: false,
         title: Text(
-          'Product Page',
+          'Products',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 20,
@@ -21,7 +22,7 @@ class ProductPage extends StatelessWidget {
           ),
         ),
         toolbarHeight: 70,
-        backgroundColor: Colors.orange[400],
+        backgroundColor: Colors.blue[700],
         elevation: 2,
       ),
     );
