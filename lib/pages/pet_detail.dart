@@ -153,7 +153,7 @@ class PetDetailPage extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 4,
+                                  height: 8,
                                 ),
                                 Text(
                                   "Saad Mulla",
