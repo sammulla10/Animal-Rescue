@@ -1,75 +1,75 @@
-enum Categ { CAT, DOG, BUNNY, HAMSTER }
+enum Categ { FOOD, MED }
 
 class ProductModel {
-  static final products = [
-    Product(
+  static final items = [
+    Item(
       id: 1,
       name: 'Pedigree, Best food',
       descript: "Dog Food",
       img: 'assets/img/products/dog_food.jpg',
       price: 1000,
-      category: Categ.DOG,
+      category: Categ.FOOD,
     ),
-    Product(
+    Item(
       id: 2,
       name: 'NexGard',
       descript: "Dog Medicine",
       img: 'assets/img/products/dog_med.jpg',
       price: 2000,
-      category: Categ.DOG,
+      category: Categ.MED,
     ),
-    Product(
+    Item(
       id: 3,
       name: 'whiskas',
       descript: "Cat Food",
       img: 'assets/img/products/cat_food.png',
       price: 1000,
-      category: Categ.CAT,
+      category: Categ.FOOD,
     ),
-    Product(
+    Item(
       id: 4,
       name: 'whiskas',
-      descript: "Cat Food",
+      descript: "Cat Medicine",
       img: 'assets/img/products/cat_med.jpg',
       price: 1000,
-      category: Categ.CAT,
+      category: Categ.MED,
     ),
-    Product(
+    Item(
       id: 5,
       name: 'SUNBURST',
       descript: "Hamster Food",
       img: 'assets/img/products/hamster_food.jpg',
       price: 1000,
-      category: Categ.HAMSTER,
+      category: Categ.FOOD,
     ),
-    Product(
+    Item(
       id: 6,
       name: 'SUNBURST',
       descript: "Hamster Medicine",
       img: 'assets/img/products/hamster_med.jpg',
       price: 1000,
-      category: Categ.HAMSTER,
+      category: Categ.MED,
     ),
-    Product(
+    Item(
       id: 7,
       name: 'Fiesta',
       descript: "Bunny Food",
       img: 'assets/img/products/bunny_food.jpg',
       price: 1000,
-      category: Categ.BUNNY,
+      category: Categ.FOOD,
     ),
-    Product(
+    Item(
       id: 8,
       name: 'BSAVA',
       descript: "Bunny Medicine",
       img: 'assets/img/products/bunny_med.jpg',
       price: 1000,
-      category: Categ.BUNNY,
+      category: Categ.MED,
     ),
   ];
 }
 
-class Product {
+class Item {
   final int id;
   final String name;
   final String descript;
@@ -77,7 +77,7 @@ class Product {
   final String img;
   final num price;
 
-  Product({
+  Item({
     required this.id,
     required this.name,
     required this.descript,

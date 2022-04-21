@@ -11,4 +11,6 @@ mixin MyTheme {
         primaryColor: Colors.orange[400],
         fontFamily: GoogleFonts.lato().fontFamily,
       );
+  static Color creamcolor = Color(0xfff5f5f5);
+  static Color darkbluishColor = Color(0xff403b58);
 }

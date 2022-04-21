@@ -17,7 +17,7 @@ class StartPage extends StatelessWidget {
               ),
               Image.asset(
                 "assets/img/start_page.jpg",
-                fit: BoxFit.contain,
+                // fit: BoxFit.contain,
               ),
               SizedBox(
                 height: 40,
