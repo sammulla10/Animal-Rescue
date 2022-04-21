@@ -7,18 +7,20 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: MyTheme.creamcolor,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: "cart".text.make(),
-      ),
-      body: Column(
-        children: [
-          Placeholder().p32().expand(),
-          Divider(),
-          _CartTotal(),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: MyTheme.creamcolor,
+        appBar: AppBar(
+          backgroundColor: Colors.orange[100],
+          title: "Cart".text.xl2.bold.make(),
+        ),
+        body: Column(
+          children: [
+            Container().p32().expand(),
+            Divider(),
+            _CartTotal(),
+          ],
+        ),
       ),
     );
   }
@@ -34,7 +36,7 @@ class _CartTotal extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\₹999".text.xl5.make(),
+          "\₹0".text.xl5.make(),
           ElevatedButton(
                   onPressed: () {},
                   style: ButtonStyle(
