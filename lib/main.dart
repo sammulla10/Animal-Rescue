@@ -1,3 +1,4 @@
+import 'package:animal_rescue/pages/cart_page.dart';
 import 'package:animal_rescue/pages/new_post.dart';
 import 'package:animal_rescue/pages/product_page.dart';
 import 'package:animal_rescue/utils/routes.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         "/login": (context) => LoginPage(),
         "/signup": (context) => SignupPage(),
         "/newpost": (context) => NewPost(),
+        "/cart": (context) => CartPage(),
       },
     );
   }
