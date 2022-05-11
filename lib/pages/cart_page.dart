@@ -3,11 +3,24 @@ import 'package:animal_rescue/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class CartPage extends StatelessWidget {
+import '../models/product_model.dart';
+
+class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
 
   @override
+  State<CartPage> createState() => _CartPageState();
+}
+
+class _CartPageState extends State<CartPage> {
+  @override
   Widget build(BuildContext context) {
+    List<Item> itemadded =
+        ModalRoute.of(context)?.settings.arguments as List<Item>;
+    num totalprice = 0;
+    itemadded.forEach((element) {
+      totalprice += element.price;
+    });
     return SafeArea(
       child: Scaffold(
         backgroundColor: MyTheme.creamcolor,
@@ -17,9 +30,16 @@ class CartPage extends StatelessWidget {
         ),
         body: Column(
           children: [
-            _CartList().p32().expand(),
+            _CartList(
+              itemgot: itemadded as List<Item>,
+              onremove: () {
+                setState(() {});
+              },
+            ).p32().expand(),
             Divider(),
-            _CartTotal(),
+            _CartTotal(
+              totalprice: totalprice,
+            ),
           ],
         ),
       ),
@@ -28,7 +48,8 @@ class CartPage extends StatelessWidget {
 }
 
 class _CartTotal extends StatelessWidget {
-  const _CartTotal({Key? key}) : super(key: key);
+  final num totalprice;
+  const _CartTotal({Key? key, required this.totalprice}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +59,7 @@ class _CartTotal extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\₹${_cart.totalprice}".text.xl5.make(),
+          "\₹${totalprice}".text.xl5.make(),
           ElevatedButton(
                   onPressed: () {
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -59,7 +80,10 @@ class _CartTotal extends StatelessWidget {
 }
 
 class _CartList extends StatefulWidget {
-  const _CartList({Key? key}) : super(key: key);
+  final Function() onremove;
+  final List<Item> itemgot;
+  const _CartList({Key? key, required this.itemgot, required this.onremove})
+      : super(key: key);
 
   @override
   State<_CartList> createState() => __CartListState();
@@ -68,16 +92,19 @@ class _CartList extends StatefulWidget {
 class __CartListState extends State<_CartList> {
   @override
   Widget build(BuildContext context) {
-    final _cart = CartModel();
+    // final _cart = CartModel();
     return ListView.builder(
-      itemCount: _cart.items.length,
+      itemCount: widget.itemgot.length,
       itemBuilder: (context, index) => ListTile(
         leading: Icon(Icons.done),
         trailing: IconButton(
           icon: Icon(Icons.remove_circle_outline),
-          onPressed: () {},
+          onPressed: () {
+            widget.itemgot.removeAt(index);
+            widget.onremove();
+          },
         ),
-        title: _cart.items[index].name.text.make(),
+        title: widget.itemgot[index].name.text.make(),
       ),
     );
   }

@@ -1,10 +1,11 @@
 import 'dart:io';
 
 import 'package:animal_rescue/pages/category_list.dart';
-import 'package:animal_rescue/models/pet_model.dart';
+import 'package:animal_rescue/models/pet_model.dart' as Pet;
 import 'package:animal_rescue/widgets/pet_widget.dart';
 import 'package:animal_rescue/utils/routes.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
@@ -18,8 +19,12 @@ class NewPost extends StatefulWidget {
 }
 
 class _NewPostState extends State<NewPost> {
-  List<Pet> pets = getPetList();
+  // List<Pet> pets = getPetList();
 
+  final nameController = TextEditingController();
+  final locationController = TextEditingController();
+  final categoryController = TextEditingController();
+  final contactController = TextEditingController();
   File? image;
 
   Future pickImage() async {
@@ -36,6 +41,7 @@ class _NewPostState extends State<NewPost> {
 
   @override
   Widget build(BuildContext context) {
+    var id = ModalRoute.of(context)?.settings.arguments;
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.blueGrey[100],
@@ -68,6 +74,7 @@ class _NewPostState extends State<NewPost> {
             child: Column(
               children: [
                 TextFormField(
+                  controller: nameController,
                   decoration: InputDecoration(
                     icon: Icon(
                       CupertinoIcons.tag,
@@ -86,6 +93,7 @@ class _NewPostState extends State<NewPost> {
                   },
                 ),
                 TextFormField(
+                  controller: locationController,
                   cursorColor: Colors.blueGrey[900],
                   decoration: InputDecoration(
                     icon: Icon(
@@ -104,6 +112,7 @@ class _NewPostState extends State<NewPost> {
                   },
                 ),
                 TextFormField(
+                  controller: categoryController,
                   cursorColor: Colors.blueGrey[900],
                   decoration: InputDecoration(
                     icon: Icon(
@@ -122,6 +131,7 @@ class _NewPostState extends State<NewPost> {
                   },
                 ),
                 TextFormField(
+                  controller: contactController,
                   cursorColor: Colors.blueGrey[900],
                   decoration: InputDecoration(
                     icon: Icon(
@@ -166,12 +176,33 @@ class _NewPostState extends State<NewPost> {
                   padding: EdgeInsets.only(bottom: 20),
                   child: ElevatedButton(
                     onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //       builder: (context) => CategoryList(category: value3)),
-                      // );
-                      Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      var category;
+                      switch (categoryController.text.toUpperCase()) {
+                        case "CAT":
+                          category = Pet.Category.CAT;
+                          break;
+                        case "HAMSTER":
+                          category = Pet.Category.HAMSTER;
+                          break;
+                        case "BUNNY":
+                          category = Pet.Category.BUNNY;
+                          break;
+                        
+                        default:
+                          category = Pet.Category.DOG;
+                          break;
+                      }
+                      var petdata = Pet.Pet(
+                          id as int,
+                          nameController.text,
+                          locationController.text,
+                          category,
+                          'assets/img/dogs/dog_3.jpg',
+                          contactController.text,
+                          true);
+                      Navigator.pop(
+                        context,petdata
+                      );
                     },
                     child: Text(
                       'Done',
@@ -195,15 +226,15 @@ class _NewPostState extends State<NewPost> {
     );
   }
 
-  List<Widget> buildNewestPet() {
-    List<Widget> newlist = [];
-    for (var i = 0; i < pets.length; i++) {
-      if (pets[i].newest) {
-        newlist.add(
-          PetWidget(pet: pets[i], index: i),
-        );
-      }
-    }
-    return newlist;
-  }
+  // List<Widget> buildNewestPet() {
+  //   List<Widget> newlist = [];
+  //   for (var i = 0; i < pets.length; i++) {
+  //     if (pets[i].newest) {
+  //       newlist.add(
+  //         PetWidget(pet: pets[i], index: i),
+  //       );
+  //     }
+  //   }
+  //   return newlist;
+  // }
 }
