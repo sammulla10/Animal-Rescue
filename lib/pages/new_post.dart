@@ -43,6 +43,15 @@ class _NewPostState extends State<NewPost> {
           toolbarHeight: 70,
           backgroundColor: Colors.blueGrey[500],
           elevation: 2,
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back_ios_outlined,
+              color: Colors.grey[800],
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
           title: Text(
             'New Post',
             textAlign: TextAlign.center,

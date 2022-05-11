@@ -12,8 +12,8 @@ class Pet {
   final String location;
   final Category category;
   final String imageUrl;
-  final String contact;
-  bool newest;
+  String contact='9132687435';
+  bool newest=true;
 
   Pet(
     this.id,

@@ -14,19 +14,28 @@ class PetDetailPage extends StatelessWidget {
         backgroundColor: Colors.white,
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-          brightness: Brightness.light,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          leading: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              Icons.arrow_back_ios_outlined,
-              color: Colors.grey[800],
+            brightness: Brightness.light,
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            leading: IconButton(
+              icon: Icon(
+                Icons.arrow_back_ios_outlined,
+                color: Colors.grey[800],
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            )
+            // GestureDetector(
+            //   onTap: () {
+            //     Navigator.pop(context);
+            //   },
+            //   child: Icon(
+            //     Icons.arrow_back_ios_outlined,
+            //     color: Colors.grey[800],
+            //   ),
+            // ),
             ),
-          ),
-        ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
