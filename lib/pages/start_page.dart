@@ -33,21 +33,21 @@ class StartPage extends StatelessWidget {
               SizedBox(
                 height: 100,
               ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, MyRoutes.signupRoute);
-                },
-                child: Text(
-                  "Sign up",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                ),
-                style: ElevatedButton.styleFrom(
-                    minimumSize: Size(150, 50), primary: Colors.black),
-              ),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     Navigator.pushNamed(context, MyRoutes.signupRoute);
+              //   },
+              //   child: Text(
+              //     "Sign up",
+              //     textAlign: TextAlign.center,
+              //     style: TextStyle(
+              //         fontSize: 20,
+              //         fontWeight: FontWeight.bold,
+              //         color: Colors.white),
+              //   ),
+              //   style: ElevatedButton.styleFrom(
+              //       minimumSize: Size(150, 50), primary: Colors.black),
+              // ),
               SizedBox(
                 height: 40,
               ),

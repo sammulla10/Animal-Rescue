@@ -1,8 +1,11 @@
 import 'dart:ui';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/material.dart';
 import 'package:animal_rescue/utils/routes.dart';
+
+import 'home_page.dart';
 
 class SignupPage extends StatefulWidget {
   SignupPage({Key? key}) : super(key: key);
@@ -12,6 +15,10 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  String? emailError;
+  String? passwordError;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -61,7 +68,9 @@ class _SignupPageState extends State<SignupPage> {
                     },
                   ),
                   TextFormField(
+                    controller: emailController,
                     decoration: InputDecoration(
+                      errorText: emailError,
                       focusedBorder: InputBorder.none,
                       icon: Icon(
                         CupertinoIcons.mail,
@@ -79,28 +88,30 @@ class _SignupPageState extends State<SignupPage> {
                       return email;
                     },
                   ),
+                  // TextFormField(
+                  //   decoration: InputDecoration(
+                  //     focusedBorder: InputBorder.none,
+                  //     icon: Icon(
+                  //       CupertinoIcons.phone_circle,
+                  //       color: Colors.orange[700],
+                  //     ),
+                  //     hintText: 'Enter Contact',
+                  //     labelText: 'Contact',
+                  //     labelStyle: TextStyle(color: Colors.orange[500]),
+                  //   ),
+                  //   cursorColor: Colors.orange[700],
+                  //   validator: (contactno) {
+                  //     if (contactno == null || contactno.isEmpty) {
+                  //       return 'Username cannot be empty';
+                  //     }
+                  //     return contactno;
+                  //   },
+                  // ),
                   TextFormField(
-                    decoration: InputDecoration(
-                      focusedBorder: InputBorder.none,
-                      icon: Icon(
-                        CupertinoIcons.phone_circle,
-                        color: Colors.orange[700],
-                      ),
-                      hintText: 'Enter Contact',
-                      labelText: 'Contact',
-                      labelStyle: TextStyle(color: Colors.orange[500]),
-                    ),
-                    cursorColor: Colors.orange[700],
-                    validator: (contactno) {
-                      if (contactno == null || contactno.isEmpty) {
-                        return 'Username cannot be empty';
-                      }
-                      return contactno;
-                    },
-                  ),
-                  TextFormField(
+                    controller: passwordController,
                     obscureText: true,
                     decoration: InputDecoration(
+                      errorText: passwordError,
                       icon: Icon(
                         CupertinoIcons.star,
                         color: Colors.orange[700],
@@ -124,8 +135,37 @@ class _SignupPageState extends State<SignupPage> {
                     height: 40,
                   ),
                   ElevatedButton(
-                    onPressed: () => Navigator.pushReplacementNamed(
-                        context, MyRoutes.loginRoute),
+                    onPressed: () async {
+                      final email = emailController.text;
+                      final password = passwordController.text;
+
+                      try {
+                        UserCredential userCredential = await FirebaseAuth
+                            .instance
+                            .createUserWithEmailAndPassword(
+                          email: email,
+                          password: password,
+                        );
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomePage()),
+                            (route) => false);
+                      } on FirebaseAuthException catch (e) {
+                        if (e.code == 'weak-password') {
+                          print('The password provided is too weak.');
+                          passwordError = 'The password provided is too weak.';
+                          emailError = null;
+                        } else if (e.code == 'email-already-in-use') {
+                          print('The account already exists for that email.');
+                          passwordError =
+                              'The account already exists for that email';
+                          passwordError = null;
+                        }
+                        setState(() {});
+                      } catch (e) {
+                        print(e);
+                      }
+                    },
                     child: Text(
                       "Sign Up",
                       textAlign: TextAlign.center,

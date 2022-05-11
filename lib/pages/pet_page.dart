@@ -1,7 +1,9 @@
 import 'package:animal_rescue/pages/donate_page.dart';
 import 'package:animal_rescue/pages/pet_page.dart';
 import 'package:animal_rescue/pages/product_page.dart';
+import 'package:animal_rescue/pages/vetenaries_page.dart';
 import 'package:animal_rescue/utils/routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:animal_rescue/pages/category_list.dart';
 import 'package:animal_rescue/models/pet_model.dart';
@@ -132,9 +134,10 @@ class _PetPageState extends State<PetPage> {
                         icon: Icon(Icons.library_add_rounded),
                       ),
                       IconButton(
-                        onPressed: () {
+                        onPressed: () async {
+                          await FirebaseAuth.instance.signOut();
                           Navigator.pushReplacementNamed(
-                            context, MyRoutes.loginRoute);
+                              context, MyRoutes.loginRoute);
                         },
                         icon: Icon(Icons.logout),
                       ),
@@ -298,7 +301,7 @@ class _PetPageState extends State<PetPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => DonateScreen()),
+                                builder: (context) => VetenaryPage()),
                           );
                         },
                         child: Text(
