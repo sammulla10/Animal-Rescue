@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "531461895838",
+    "project_id": "better-place-223f2",
+    "storage_bucket": "better-place-223f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531461895838:android:d945031f1e5672ffee6d8f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_catlog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "531461895838-qcj00ff83u4ejsdbak9nqu0c3791deho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAV6C4l5o5PIMzwiDEvc7_0RZQhoytRcBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "531461895838-qcj00ff83u4ejsdbak9nqu0c3791deho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

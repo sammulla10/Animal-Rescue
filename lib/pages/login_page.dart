@@ -1,7 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:animal_rescue/utils/routes.dart';
+
+import 'home_page.dart';
+import 'signup_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -11,6 +15,11 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  String? emailError;
+  String? passwordError;
+
   final _formKey = GlobalKey<FormState>();
   moveToHome(BuildContext context) async {
     await Future.delayed(
@@ -53,25 +62,28 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     children: [
                       TextFormField(
+                        controller: emailController,
                         decoration: InputDecoration(
                           focusedBorder: InputBorder.none,
                           icon: Icon(
                             CupertinoIcons.person,
                             color: Colors.orange[700],
                           ),
-                          hintText: "Enter Username",
-                          labelText: "Username",
+                          hintText: "Enter Email",
+                          errorText: emailError,
+                          labelText: "Email",
                           labelStyle: TextStyle(color: Colors.orange[500]),
                         ),
                         cursorColor: Colors.orange[700],
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Username cannot be empty';
+                            return 'Email cannot be empty';
                           }
                           return null;
                         },
                       ),
                       TextFormField(
+                        controller: passwordController,
                         obscureText: true,
                         decoration: InputDecoration(
                           icon: Icon(
@@ -79,6 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                             color: Colors.orange[700],
                           ),
                           hintText: "Enter Password",
+                          errorText: passwordError,
                           labelText: "Password",
                           labelStyle: TextStyle(color: Colors.orange[500]),
                         ),
@@ -94,9 +107,35 @@ class _LoginPageState extends State<LoginPage> {
                         height: 40,
                       ),
                       ElevatedButton(
-                        onPressed: () => moveToHome(context),
+                        onPressed: () async {
+                          //Login
+                          final email = emailController.text;
+                          final password = passwordController.text;
+                          try {
+                            UserCredential userCredential = await FirebaseAuth
+                                .instance
+                                .signInWithEmailAndPassword(
+                                    email: email, password: password);
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomePage()));
+                          } on FirebaseAuthException catch (e) {
+                            if (e.code == 'user-not-found') {
+                              print('No user found for that email.');
+                              emailError = 'No user found for that email.';
+                              passwordError = null;
+                            } else if (e.code == 'wrong-password') {
+                              passwordError =
+                                  'Wrong password provided for that user.';
+                              emailError = null;
+                              print('Wrong password provided for that user.');
+                            }
+                            setState(() {});
+                          }
+                        },
                         child: Text(
-                          "Log In",
+                          "Login",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 18,
@@ -107,7 +146,25 @@ class _LoginPageState extends State<LoginPage> {
                             fixedSize: Size(350, 50),
                             primary: Colors.orange[300],
                             elevation: 5),
-                      )
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Column(
+                        children: [
+                          Text("Do not have an account?"),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignupPage()),
+                              );
+                            },
+                            child: Text("Sign up"),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
