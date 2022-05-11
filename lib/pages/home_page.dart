@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   final screen = [
     PetPage(),
     ProductPage(),
-    NewPost(),
+    
   ];
   @override
   Widget build(BuildContext context) {
@@ -235,11 +235,7 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(Icons.shopping_cart),
                 label: 'Products',
                 backgroundColor: Colors.blue[800]),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.library_add_rounded),
-              label: 'Add Post',
-              backgroundColor: Colors.blueGrey[800],
-            ),
+            
           ],
         ),
       ),
@@ -257,12 +253,7 @@ class _HomePageState extends State<HomePage> {
                 builder: (context) => CategoryList(category: category)),
           );
         },
-        onDoubleTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => ProductPage()),
-          );
-        },
+        
         child: Container(
           // height: deviceSize.height * 0.08,
           height: 80,

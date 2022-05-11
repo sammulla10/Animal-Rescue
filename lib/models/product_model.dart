@@ -10,6 +10,7 @@ class ProductModel {
       price: 1000,
       category: Categ.FOOD,
     ),
+    
     Item(
       id: 2,
       name: 'NexGard',
@@ -67,6 +68,8 @@ class ProductModel {
       category: Categ.MED,
     ),
   ];
+
+  Item getById(int id)=> items.firstWhere((element) => false);
 }
 
 class Item {

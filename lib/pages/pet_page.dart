@@ -44,19 +44,18 @@ class _PetPageState extends State<PetPage> {
                   padding: EdgeInsets.all(16),
                   child: Row(
                     children: [
-                      SizedBox(width: 16),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, MyRoutes.loginRoute);
+                      IconButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, MyRoutes.newPost);
                         },
-                        child: Text(
-                          "Log out",
-                          style: TextStyle(
-                            color: Colors.grey[800],
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        ),
+                        icon: Icon(Icons.library_add_rounded),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(
+                              context, MyRoutes.loginRoute);
+                        },
+                        icon: Icon(Icons.logout),
                       ),
                     ],
                   ),
@@ -168,42 +167,77 @@ class _PetPageState extends State<PetPage> {
                   ),
 
                   SizedBox(
-                    height: 16,
+                    height: 20,
                   ),
 
                   Center(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => DonateScreen()),
-                        );
-                      },
-                      child: Text(
-                        'Donate',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        elevation: 10,
-                        minimumSize: Size(350, 50),
-                        maximumSize: Size(500, 50),
+                    child: SizedBox(
+                      height: 50,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DonateScreen()),
+                          );
+                        },
+                        child: Text(
+                          'Donate',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          elevation: 10,
+                          minimumSize: Size(350, 50),
+                          maximumSize: Size(500, 50),
+                        ),
                       ),
                     ),
                   ),
 
-                  // Container(
-                  //   height: 100,
-                  //   margin: EdgeInsets.only(bottom: 16),
-                  //   child: PageView(
-                  //     physics: BouncingScrollPhysics(),
-                  //     children: [],
-                  //   ),
-                  // ),
+                  SizedBox(
+                    height: 28,
+                  ),
+
+                  Center(
+                    child: SizedBox(
+                      height: 50,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DonateScreen()),
+                          );
+                        },
+                        child: Text(
+                          'Vetenaries',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          elevation: 10,
+                          minimumSize: Size(350, 50),
+                          maximumSize: Size(500, 50),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  Container(
+                    height: 50,
+                    margin: EdgeInsets.only(bottom: 16),
+                    child: PageView(
+                      physics: BouncingScrollPhysics(),
+                      children: [],
+                    ),
+                  ),
                 ],
               ),
             )));
