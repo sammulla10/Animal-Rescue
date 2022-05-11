@@ -4,30 +4,32 @@ import 'package:animal_rescue/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class ProductList extends StatelessWidget {
-  const ProductList({Key? key}) : super(key: key);
+// class ProductList extends StatelessWidget {
+//   const ProductList({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      itemCount: ProductModel.items.length,
-      itemBuilder: (context, index) {
-        final product = ProductModel.items[index];
-        return InkWell(
-            onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => ProductDetailPage(product: product))),
-            child: ProductItem(product: product));
-      },
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return ListView.builder(
+//       shrinkWrap: true,
+//       itemCount: ProductModel.items.length,
+//       itemBuilder: (context, index) {
+//         final product = ProductModel.items[index];
+//         return InkWell(
+//             onTap: () => Navigator.push(
+//                 context,
+//                 MaterialPageRoute(
+//                     builder: (context) => ProductDetailPage(product: product))),
+//             child: ProductItem(product: product));
+//       },
+//     );
+//   }
+// }
 
 class ProductItem extends StatelessWidget {
   final Item product;
+  final Function() onaddtocart;
   const ProductItem({
+    required this.onaddtocart,
     Key? key,
     required this.product,
   }) : super(key: key);
@@ -59,7 +61,7 @@ class ProductItem extends StatelessWidget {
               children: [
                 "\₹${product.price}".text.bold.xl.make(),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed:  onaddtocart,
                     style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.all(Colors.blue[800])),
