@@ -75,6 +75,7 @@ class _NewPostState extends State<NewPost> {
               children: [
                 TextFormField(
                   controller: nameController,
+                  textCapitalization: TextCapitalization.words,
                   decoration: InputDecoration(
                     icon: Icon(
                       CupertinoIcons.tag,
@@ -94,6 +95,7 @@ class _NewPostState extends State<NewPost> {
                 ),
                 TextFormField(
                   controller: locationController,
+                  textCapitalization: TextCapitalization.sentences,
                   cursorColor: Colors.blueGrey[900],
                   decoration: InputDecoration(
                     icon: Icon(
@@ -113,6 +115,7 @@ class _NewPostState extends State<NewPost> {
                 ),
                 TextFormField(
                   controller: categoryController,
+                  textCapitalization: TextCapitalization.sentences,
                   cursorColor: Colors.blueGrey[900],
                   decoration: InputDecoration(
                     icon: Icon(
@@ -133,6 +136,7 @@ class _NewPostState extends State<NewPost> {
                 TextFormField(
                   controller: contactController,
                   cursorColor: Colors.blueGrey[900],
+                  keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
                     icon: Icon(
                       CupertinoIcons.phone,
@@ -187,7 +191,7 @@ class _NewPostState extends State<NewPost> {
                         case "BUNNY":
                           category = Pet.Category.BUNNY;
                           break;
-                        
+
                         default:
                           category = Pet.Category.DOG;
                           break;
@@ -200,9 +204,7 @@ class _NewPostState extends State<NewPost> {
                           'assets/img/dogs/dog_3.jpg',
                           contactController.text,
                           true);
-                      Navigator.pop(
-                        context,petdata
-                      );
+                      Navigator.pop(context, petdata);
                     },
                     child: Text(
                       'Done',
