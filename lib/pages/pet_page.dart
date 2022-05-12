@@ -1,7 +1,7 @@
 import 'package:animal_rescue/pages/donate_page.dart';
 import 'package:animal_rescue/pages/pet_page.dart';
 import 'package:animal_rescue/pages/product_page.dart';
-import 'package:animal_rescue/pages/vetenaries_page.dart';
+import 'package:animal_rescue/pages/vetenary_page.dart';
 import 'package:animal_rescue/utils/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

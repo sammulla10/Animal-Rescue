@@ -1,9 +1,6 @@
-import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/painting.dart';
 import 'package:flutter/material.dart';
-import 'package:animal_rescue/utils/routes.dart';
 
 import 'home_page.dart';
 
@@ -138,7 +135,8 @@ class _SignupPageState extends State<SignupPage> {
                     onPressed: () async {
                       final email = emailController.text;
                       final password = passwordController.text;
-
+                      print(email);
+                      print(password);
                       try {
                         UserCredential userCredential = await FirebaseAuth
                             .instance
@@ -146,6 +144,7 @@ class _SignupPageState extends State<SignupPage> {
                           email: email,
                           password: password,
                         );
+                        print("signnn uppp");
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(builder: (context) => HomePage()),
@@ -160,9 +159,12 @@ class _SignupPageState extends State<SignupPage> {
                           passwordError =
                               'The account already exists for that email';
                           passwordError = null;
+                        } else {
+                          print('error${e.message}');
                         }
                         setState(() {});
                       } catch (e) {
+                        print("errrrrrrrrrrrrrrrror");
                         print(e);
                       }
                     },

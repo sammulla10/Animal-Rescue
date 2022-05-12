@@ -109,13 +109,15 @@ class _LoginPageState extends State<LoginPage> {
                       ElevatedButton(
                         onPressed: () async {
                           //Login
-                          final email = emailController.text;
-                          final password = passwordController.text;
+                          final email = emailController.text.trim();
+                          final password = passwordController.text.trim();
+                          print("//" + email + "//");
                           try {
                             UserCredential userCredential = await FirebaseAuth
                                 .instance
                                 .signInWithEmailAndPassword(
                                     email: email, password: password);
+                            print("login success");
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
@@ -130,8 +132,13 @@ class _LoginPageState extends State<LoginPage> {
                                   'Wrong password provided for that user.';
                               emailError = null;
                               print('Wrong password provided for that user.');
+                            } else {
+                              print(e.message);
+                              print('login errrorr');
                             }
                             setState(() {});
+                          } catch (e) {
+                            print("login errror  " + e.toString());
                           }
                         },
                         child: Text(
